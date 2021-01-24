@@ -1,0 +1,10 @@
+<nav class="navbar navbar-dark bg-dark" >
+  <div>
+    <a class="btn btn-dark"  [routerLink]="['/']">Home</a>
+    <a class="btn btn-dark" [hidden]="logcheck()==true" [routerLink]="['/login']">Login</a>
+    <a class="btn btn-dark" [routerLink]="['/register']">Rejestracja</a>
+    <a class="btn btn-dark" [routerLink]="['/room']">Pokoje</a>
+    <a class="btn btn-dark" [routerLink]="['/account']">Konto</a>
+    <button class="btn btn-dark" [hidden]="logcheck()==false" (click)="logout()">Wyloguj</button>
+  </div>
+</nav>

@@ -1,0 +1,43 @@
+<div class="left">
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <div class ="form-group">
+    <label>Login:
+      <input type="text" class="form-control" formControlName="login"/>
+      {{registerForm.controls['login'].status}}
+    </label>
+    <p></p>
+    <label>Hasło:
+      <input type="text" class="form-control" formControlName="password"/>
+      {{registerForm.controls['password'].status}}
+    </label>
+    <p></p>
+    <label>Imię:
+      <input type="text" class="form-control" formControlName="name"/>
+      {{registerForm.controls['name'].status}}
+    </label>
+    <p></p>
+    <label>Nazwisko:
+      <input type="text" class="form-control" formControlName="surname"/>
+      {{registerForm.controls['surname'].status}}
+    </label>
+    <p></p>
+    <label>Email:
+      <input type="text" class="form-control" formControlName="email"/>
+      {{registerForm.controls['email'].status}}
+    </label>
+    <p></p>
+    <label>Numer Bankowy:
+      <input type="text" class="form-control" formControlName="bank_acc_number"/>
+      {{registerForm.controls['bank_acc_number'].status}}
+    </label>
+    <p></p>
+    <label>Numer telefonu:
+      <input type="text" class="form-control" formControlName="phone"/>
+      {{registerForm.controls['phone'].status}}
+    </label>
+    <p></p>
+    <button  type="submit" class="btn btn-dark" [disabled]="!registerForm.valid">Zarejestruj</button>
+
+  </div>
+</form>
+</div>
