@@ -1,4 +1,9 @@
 <h3 class="p-3 text-center">Wolne pokoje</h3>
+
+
+<select [(ngModel)]="selectedValue" id="exampleFormControlSelect1" class="form-control" >
+  <option *ngFor="let option of sizes" [value]="option.value">{{option.name}}</option>
+</select>
 <form [formGroup]="filterForm">
   <div class ="form-group">
     <p></p>

@@ -23,17 +23,21 @@ export class ClientService {
   getRoomsSize(size:string){
     return this.http.get(this.url+'/filterrooms-size?size='+size);
   }
-  getRoomsPriceRange(pricestart:number,priceend:number){
+
+  getRoomsPriceRange(pricestart: number, priceend: number){
     return this.http.get(this.url+'/filterrooms-range?pricestart='+pricestart+'&priceend='+priceend);
   }
-  getRoomsSizeStart(size:string,pricestart:string){
+
+  getRoomsSizeStart(size: string, pricestart: number){
     return this.http.get(this.url+'/filterrooms-sizestart?size='+size+'&pricestart='+pricestart);
   }
-  getRoomsSizeEnd(size:string,priceend:string){
+
+  getRoomsSizeEnd(size: string, priceend: number){
     return this.http.get(this.url+'/filterrooms-sizeend?size='+size+'&priceend='+priceend);
   }
-  getRoomsSizeRange(size:string,pricestart:string,priceend:string){
-    return this.http.get(this.url+'/filterrooms_sizerange?size='+size+'&pricestart='+pricestart+'&priceend='+priceend);
+
+  getRoomsSizeRange(size: string, pricestart: number, priceend: number){
+    return this.http.get(this.url+'/filterrooms-sizerange?size='+size+'&pricestart='+pricestart+'&priceend='+priceend);
   }
 
 
