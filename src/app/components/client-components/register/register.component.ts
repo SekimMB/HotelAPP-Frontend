@@ -23,7 +23,10 @@ export class RegisterComponent implements OnInit {
   phone: ['',[Validators.required,Validators.pattern('^[0-9]{9}')]]
   });
 
+
+
   ngOnInit(): void {
+
   }
 
   register (){

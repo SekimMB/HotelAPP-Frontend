@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ClientService} from '../../../services/client.service';
 import { Router } from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
+import {DataService} from '../../../services/data.service';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class RoomComponent implements OnInit {
   constructor(
     private router:Router,
     private clientservice:ClientService,
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
+    private dataservice:DataService
   ) { }
 
 
@@ -76,6 +78,12 @@ export class RoomComponent implements OnInit {
       this.selectedValue=null;
     })
   }
+
+  reserve(room_id){
+    this.dataservice.setData(room_id);
+    this.router.navigate(['reservation']);
+  }
+
 }
 
 class filter{

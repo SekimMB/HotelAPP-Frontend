@@ -1,0 +1,20 @@
+<div class="left">
+  <form [formGroup]="reservationForm" (ngSubmit)="reserve()">
+    <div class ="form-group">
+      <label>Start rezerwacji:
+        <input type="text" class="form-control" formControlName="password"/>
+        {{reservationForm.controls['reservation_start'].status}}
+      </label>
+      <p></p>
+      <label>Koniec rezerwacji:
+        <p>
+
+        </p>
+        {{reservationForm.controls['reservation_end'].status}}
+      </label>
+      <p></p>
+      <button  type="submit" class="btn btn-dark" [disabled]="!reservationForm.valid">Zarezerwuj</button>
+
+    </div>
+  </form>
+</div>

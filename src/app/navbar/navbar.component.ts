@@ -21,8 +21,8 @@ export class NavbarComponent implements OnInit {
   }
 
   logcheck(){
-    return localStorage.getItem("UserID")!=null;
-    // returns true if key is not null
+    return localStorage.getItem("UserID")==null;
+    // returns true if not logged in
   }
 
 }

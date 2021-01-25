@@ -14,6 +14,12 @@ import { RoomComponent } from './components/room-components/room/room.component'
 import {HttpClientModule} from '@angular/common/http';
 import { AccountComponent } from './components/client-components/account/account.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReservationComponent } from './components/reservation-components/reservation/reservation.component';
+import { ReservationSuccessComponent } from './components/reservation-components/reservation-success/reservation-success.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +30,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     HomeComponent,
     RoomComponent,
-    AccountComponent
+    AccountComponent,
+    ReservationComponent,
+    ReservationSuccessComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-  ],
+
+],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })
