@@ -33,8 +33,9 @@
     <tbody>
     <tr *ngFor="let item of items$">
       <td>{{item.size}}</td>
-      <td>{{item.id}}<button  type="submit" class="btn btn-dark" (click)="reserve(item.id)">Rezerwuj</button></td>
+      <td>{{item.id}}
       <td>{{item.price}}</td>
+      <td><button  type="submit" class="btn btn-dark" (click)="reserve(item.id)">Rezerwuj</button></td>
     </tr>
     </tbody>
   </table>
