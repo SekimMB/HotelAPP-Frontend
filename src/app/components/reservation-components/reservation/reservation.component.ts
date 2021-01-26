@@ -4,9 +4,7 @@ import {Router} from '@angular/router';
 import {ReservationService} from '../../../services/reservation.service';
 import {DataService} from '../../../services/data.service';
 import {ReceptionistService} from '../../../services/receptionist.service';
-
-
-
+import {DatePipe} from '@angular/common';
 
 
 @Component({
@@ -19,7 +17,8 @@ export class ReservationComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder,private router:Router, private service:ReservationService,
-              private dataservice: DataService, private receptionist:ReceptionistService) {}
+              private dataservice: DataService, private receptionist:ReceptionistService,
+              private datepipe: DatePipe) {}
 
   reservationForm = this.formBuilder.group({
     id_client: ['',[Validators.required]],
@@ -36,30 +35,22 @@ export class ReservationComponent implements OnInit {
     let data = new Reservation();
     data = this.reservationForm.value;
     data.id_client=parseInt(localStorage.getItem("UserID"));
-
     data.id_room=<number>this.dataservice.getData();
+    data.start_date=this.datepipe.transform(data.start_date, 'dd/MM/yyyy');
+    data.end_date=this.datepipe.transform(data.end_date, 'dd/MM/yyyy');
     console.log(data);
     this.service.reserve(data).subscribe((response)=>{
       console.log(response);
       this.receptionist.checkIn(data.id_client,data.id_room);
       this.router.navigate(['reservation/success']);
-    })
+    });
     this.receptionist.checkIn(data.id_client,data.id_room).subscribe((response)=>{
       console.log(response);})
   }
-  cancel_reservation(){
-    let data = new Reservation();
-    data = this.reservationForm.value;
-    data.id_client=parseInt(localStorage.getItem("UserID"));
-    data.id_room=<number>this.dataservice.getData();
-    this.receptionist.checkOut(data.id_client,data.id_room).subscribe((response)=>{
-      console.log(response);})
-  }
-
 }
 class Reservation{
   id_client: number;
   id_room: number;
-  reservation_start: string;
-  reservation_end: string;
+  start_date: string;
+  end_date: string;
 }

@@ -1,0 +1,19 @@
+<div class="container">
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th>Numer Pokoju</th>
+      <th>Początek Rezerwacji</th>
+      <th>Koniec Rezerwacji</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of items$">
+      <td>{{item.id_room}}</td>
+      <td>{{item.start}}
+      <td>{{item.end}}</td>
+      <td><button  type="submit" class="btn btn-dark" (click)="Cancel(item.id_reservation,item.id_room)">Anuluj Rezerwacje</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

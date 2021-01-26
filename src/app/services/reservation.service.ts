@@ -14,4 +14,8 @@ export class ReservationService {
     return this.http.post(this.url+'/reservation', data,{ responseType: 'text' });
   }
 
+  cancel_reservation(id_reservation:number){
+    return this.http.delete(this.url+'/reservation/'+id_reservation,{ responseType: 'text' });
+  }
+
 }

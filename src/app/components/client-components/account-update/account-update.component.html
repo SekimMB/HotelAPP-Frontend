@@ -1,0 +1,43 @@
+<div class="left">
+  <form [formGroup]="updateForm" (ngSubmit)="update()">
+    <div class ="form-group">
+      <label>Login:
+        <input type="text" class="form-control" formControlName="login"/>
+        {{updateForm.controls['login'].status}}
+      </label>
+      <p></p>
+      <label>Hasło:
+        <input type="text" class="form-control" formControlName="password"/>
+        {{updateForm.controls['password'].status}}
+      </label>
+      <p></p>
+      <label>Imię:
+        <input type="text" class="form-control" formControlName="name"/>
+        {{updateForm.controls['name'].status}}
+      </label>
+      <p></p>
+      <label>Nazwisko:
+        <input type="text" class="form-control" formControlName="surname"/>
+        {{updateForm.controls['surname'].status}}
+      </label>
+      <p></p>
+      <label>Email:
+        <input type="text" class="form-control" formControlName="email"/>
+        {{updateForm.controls['email'].status}}
+      </label>
+      <p></p>
+      <label>Numer Bankowy:
+        <input type="text" class="form-control" formControlName="bank_acc_number"/>
+        {{updateForm.controls['bank_acc_number'].status}}
+      </label>
+      <p></p>
+      <label>Numer telefonu:
+        <input type="text" class="form-control" formControlName="phone"/>
+        {{updateForm.controls['phone'].status}}
+      </label>
+      <p></p>
+      <button  type="submit" class="btn btn-dark" [disabled]="!updateForm.valid">Zaktualizuj Dane</button>
+
+    </div>
+  </form>
+</div>

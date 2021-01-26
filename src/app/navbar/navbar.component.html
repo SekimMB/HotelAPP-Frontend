@@ -4,7 +4,8 @@
     <a class="btn btn-dark" [hidden]="logcheck()==false" [routerLink]="['/login']">Login</a>
     <a class="btn btn-dark" [routerLink]="['/register']">Rejestracja</a>
     <a class="btn btn-dark" [routerLink]="['/room']">Pokoje</a>
-    <a class="btn btn-dark" [routerLink]="['/account']">Konto</a>
+    <a class="btn btn-dark" [hidden]="logcheck()==true" [routerLink]="['/account']">Konto</a>
+    <a class="btn btn-dark" [hidden]="logcheck()==true" [routerLink]="['/account-reservations']">Rezerwacje</a>
     <button class="btn btn-dark" [hidden]="logcheck()==true" (click)="logout()">Wyloguj</button>
   </div>
 </nav>

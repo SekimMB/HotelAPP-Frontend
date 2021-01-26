@@ -7,6 +7,10 @@ import {RegisterSuccessComponent} from './components/client-components/register-
 import {RoomComponent} from './components/room-components/room/room.component';
 import {ReservationSuccessComponent} from './components/reservation-components/reservation-success/reservation-success.component';
 import {ReservationComponent} from './components/reservation-components/reservation/reservation.component';
+import {AccountComponent} from './components/client-components/account/account.component';
+import {AccountReservationsComponent} from './components/client-components/account-reservations/account-reservations.component';
+import {AuthGuard} from './auth.guard';
+import {AccountUpdateComponent} from './components/client-components/account-update/account-update.component';
 
 const routes: Routes = [{
     path: '',
@@ -22,7 +26,8 @@ const routes: Routes = [{
   },
   {
     path: 'register/success',
-    component: RegisterSuccessComponent
+    component: RegisterSuccessComponent,
+
   },
   {
     path: 'room',
@@ -30,11 +35,28 @@ const routes: Routes = [{
   },
   {
     path: 'reservation/success',
-    component: ReservationSuccessComponent
+    component: ReservationSuccessComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'reservation',
-    component: ReservationComponent
+    component: ReservationComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path: 'account-reservations',
+    component: AccountReservationsComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path: 'account-update',
+    component: AccountUpdateComponent,
+    canActivate : [AuthGuard]
   },
 ];
 

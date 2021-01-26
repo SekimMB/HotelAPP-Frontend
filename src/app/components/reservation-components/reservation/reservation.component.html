@@ -4,33 +4,30 @@
       <p></p>
       <label>Start rezerwacji:
         <p></p>
-<!--        <mat-form-field appearance="fill">-->
-<!--          <mat-label>Choose a date</mat-label>-->
-<!--          <input matInput [matDatepicker]="picker1" class="form-control" formControlName="reservation_start" >-->
-<!--          {{reservationForm.controls['reservation_start'].status}}-->
-<!--          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>-->
-<!--          <mat-datepicker #picker1></mat-datepicker>-->
-<!--        </mat-form-field>-->
-        <input type="text" class="form-control" formControlName="start_date"/>
-        {{reservationForm.controls['start_date'].status}}
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker1" class="form-control" formControlName="start_date" >
+          {{reservationForm.controls['start_date'].status}}
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+<!--        <input type="text" class="form-control" formControlName="start_date"/>-->
+<!--        {{reservationForm.controls['start_date'].status}}-->
       </label>
       <p></p>
       <label>Koniec rezerwacji:
         <p></p>
-<!--          <mat-form-field appearance="fill">-->
-<!--            <mat-label>Choose a date</mat-label>-->
-<!--            <input matInput [matDatepicker]="picker2" class="form-control" formControlName="reservation_end">-->
-<!--            {{reservationForm.controls['reservation_end'].status}}-->
-<!--            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>-->
-<!--            <mat-datepicker #picker2></mat-datepicker>-->
-<!--          </mat-form-field>-->
-        <input type="text" class="form-control" formControlName="end_date"/>
-        {{reservationForm.controls['end_date'].status}}
+          <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker2" class="form-control" formControlName="end_date">
+            {{reservationForm.controls['end_date'].status}}
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
       </label>
       <p></p>
       <button  type="submit" class="btn btn-dark" (click)="reserve()" >Zarezerwuj</button>
     </div>
-    <button  type="submit" class="btn btn-dark" (click)="cancel_reservation()">Delete</button>
   </form>
 
 

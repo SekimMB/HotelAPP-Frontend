@@ -7,7 +7,6 @@ import { RegisterComponent } from './components/client-components/register/regis
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './components/client-components/login/login.component';
 import { RegisterSuccessComponent } from './components/client-components/register-success/register-success.component';
-import { CookieService } from 'ngx-cookie-service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { RoomComponent } from './components/room-components/room/room.component';
@@ -21,22 +20,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMomentDateModule} from '@angular/material-moment-adapter'
-
-
-
-export const MY_FORMATS = {
-  parse: {
-    dateInput: 'MM.DD.YYYY'
-  },
-  display: {
-    dateInput: 'MM.DD.YYYY',
-    monthYearLabel: 'MM YYYY',
-    dateA11yLabel: 'MM.DD.YYYY',
-    monthYearA11yLabel: 'MM YYYY'
-  }
-};
-
-
+import { DatePipe } from '@angular/common';
+import { AccountReservationsComponent } from './components/client-components/account-reservations/account-reservations.component';
+import { AccountUpdateComponent } from './components/client-components/account-update/account-update.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +36,8 @@ export const MY_FORMATS = {
     AccountComponent,
     ReservationComponent,
     ReservationSuccessComponent,
+    AccountReservationsComponent,
+    AccountUpdateComponent,
 
   ],
   imports: [
@@ -63,10 +51,10 @@ export const MY_FORMATS = {
     MatDatepickerModule,
     MatInputModule,
     MatIconModule,
-    MatMomentDateModule
-
+    MatMomentDateModule,
   ],
-  providers: [],
+
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
