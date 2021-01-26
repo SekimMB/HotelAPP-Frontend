@@ -16,8 +16,25 @@ import { AccountComponent } from './components/client-components/account/account
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReservationComponent } from './components/reservation-components/reservation/reservation.component';
 import { ReservationSuccessComponent } from './components/reservation-components/reservation-success/reservation-success.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMomentDateModule} from '@angular/material-moment-adapter'
 
 
+
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'MM.DD.YYYY'
+  },
+  display: {
+    dateInput: 'MM.DD.YYYY',
+    monthYearLabel: 'MM YYYY',
+    dateA11yLabel: 'MM.DD.YYYY',
+    monthYearA11yLabel: 'MM YYYY'
+  }
+};
 
 
 
@@ -42,9 +59,15 @@ import { ReservationSuccessComponent } from './components/reservation-components
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatIconModule,
+    MatMomentDateModule
 
-],
-  providers: [CookieService],
+  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

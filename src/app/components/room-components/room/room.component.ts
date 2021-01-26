@@ -80,7 +80,7 @@ export class RoomComponent implements OnInit {
   }
 
   reserve(room_id){
-    this.dataservice.setData(room_id);
+    this.dataservice.setData(<string>room_id);
     this.router.navigate(['reservation']);
   }
 

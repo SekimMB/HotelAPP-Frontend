@@ -11,7 +11,7 @@ export class ReservationService {
   constructor(private http:HttpClient) { }
 
   reserve(data?:any){
-    return this.http.post(this.url+'/reservation', data);
+    return this.http.post(this.url+'/reservation', data,{ responseType: 'text' });
   }
 
 }
